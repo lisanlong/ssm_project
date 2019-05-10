@@ -10,6 +10,7 @@ public @interface Logww {
       String operationNam2e() default "";
       String operationNam2e3() default "";
       String operationNam2e3q3() default "";
+      String operationNam2e3q321() default "";
 
 
 }
