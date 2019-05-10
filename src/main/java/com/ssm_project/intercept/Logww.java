@@ -5,7 +5,5 @@ import java.lang.annotation.*;
 @Documented
 public @interface Logww {
       String operationType() default "";
-
-
       String operationName() default "";
 }
