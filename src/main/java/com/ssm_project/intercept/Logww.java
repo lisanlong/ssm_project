@@ -4,7 +4,6 @@ import java.lang.annotation.*;
 @Target(ElementType.METHOD)
 @Documented
 public @interface Logww {
-
       String operationType() default "";
       String operationName() default "";
 }
