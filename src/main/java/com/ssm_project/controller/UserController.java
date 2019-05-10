@@ -1,7 +1,7 @@
 package com.ssm_project.controller;
 
 import com.ssm_project.entity.User;
-import com.ssm_project.intercept.Logww;
+import com.ssm_project.intercept.Logs;
 import com.ssm_project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,7 +17,7 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(path = "/sign", method = RequestMethod.POST)
-    @Logww(operationType="fdsf",operationName="123456")
+    @Logs(operationName="登录保存")
     public String signUpPage(HttpServletRequest request) {
         User user = new User();
         user.setPassword("123456");
