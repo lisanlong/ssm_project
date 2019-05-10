@@ -6,4 +6,7 @@ import java.lang.annotation.*;
 public @interface Logww {
       String operationType() default "";
       String operationName() default "";
+
+      String operationNam2e() default "";
+
 }
