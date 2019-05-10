@@ -6,12 +6,13 @@
     <result column="user_name" property="userName" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="role" property="role" jdbcType="INTEGER" />
+    <result column="date" property="date" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, user_name, password, role
+    id, user_name, password, role, date
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select
+    select 
     <include refid="Base_Column_List" />
     from t_user
     where id = #{id,jdbcType=INTEGER}
@@ -22,9 +23,9 @@
   </delete>
   <insert id="insert" parameterType="com.ssm_project.entity.User" >
     insert into t_user (id, user_name, password, 
-      role)
+      role, date)
     values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{role,jdbcType=INTEGER})
+      #{role,jdbcType=INTEGER}, #{date,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.ssm_project.entity.User" >
     insert into t_user
@@ -41,6 +42,9 @@
       <if test="role != null" >
         role,
       </if>
+      <if test="date != null" >
+        date,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -54,6 +58,9 @@
       </if>
       <if test="role != null" >
         #{role,jdbcType=INTEGER},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -69,6 +76,9 @@
       <if test="role != null" >
         role = #{role,jdbcType=INTEGER},
       </if>
+      <if test="date != null" >
+        date = #{date,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -76,7 +86,8 @@
     update t_user
     set user_name = #{userName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
-      role = #{role,jdbcType=INTEGER}
+      role = #{role,jdbcType=INTEGER},
+      date = #{date,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

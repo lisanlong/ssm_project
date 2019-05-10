@@ -15,7 +15,7 @@
 <h2>登录</h2>
 <div>
     <!-- 如果要实现登录操作，需要在 UserController 中添加相应的方法  -->
-    <form action="${pageContext.request.contextPath }/user/sign" method="post">
+    <form action="${pageContext.request.contextPath }/user/login" method="post">
         <input type="text" name="username" >
         <input type="text" name="password" >
         <input type="submit" value="登录">

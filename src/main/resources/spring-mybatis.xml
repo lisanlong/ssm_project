@@ -7,6 +7,7 @@
                               http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
                               http://www.springframework.org/schema/tx
                               http://www.springframework.org/schema/tx/spring-tx.xsd">
+
     <!-- 建议分包扫描各个组件 -->
     <context:component-scan base-package="com.ssm_project.service"/>
     <!-- 读取类路径下的属性文件-->
