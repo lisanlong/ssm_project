@@ -7,5 +7,6 @@ public @interface Logww {
       String operationType() default "";
       String operationName() default "";
       String operationName34() default "";
+      String operationNam2e() default "";
 
 }
