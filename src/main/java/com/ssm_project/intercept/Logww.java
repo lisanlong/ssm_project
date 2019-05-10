@@ -8,7 +8,8 @@ import java.lang.annotation.*;
 @Documented
 public @interface Logww {
 
-     public String operationType() default "";
+      String operationType() default "";
 
-     public String operationName() default "";
+
+      String operationName() default "";
 }
